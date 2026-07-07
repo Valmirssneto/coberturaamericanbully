@@ -764,40 +764,7 @@ Liu Haze
 
     <!-- INDICADORES -->
 
-    <div class="carousel-dots">
-
-      <button
-        class="dot active"
-        onclick="irParaSlide(0)"
-        aria-label="Foto 1"
-      ></button>
-
-      <button
-        class="dot"
-        onclick="irParaSlide(1)"
-        aria-label="Foto 2"
-      ></button>
-
-      <button
-        class="dot"
-        onclick="irParaSlide(2)"
-        aria-label="Foto 3"
-      ></button>
-
-      <button
-        class="dot"
-        onclick="irParaSlide(3)"
-        aria-label="Foto 4"
-      ></button>
-
-      <button
-        class="dot"
-        onclick="irParaSlide(4)"
-        aria-label="Foto 5"
-      ></button>
-
-    </div>
-
+  <div class="carousel-dots"></div>
   </main>
 
 
@@ -1038,149 +1005,178 @@ Liu Haze
        JAVASCRIPT CARROSSEL
   ====================================================== -->
 
-  <script>
+<script>
 
-    const slides =
-      document.querySelectorAll(".hero-slide");
+  const slides =
+    document.querySelectorAll(".hero-slide");
+
+  const dotsContainer =
+    document.querySelector(".carousel-dots");
+
+  let dots;
+
+  let slideAtual = 0;
+
+  let carrosselAutomatico;
 
 
-    const dots =
+  /* =====================================================
+     CRIAR INDICADORES AUTOMATICAMENTE
+  ===================================================== */
+
+  function criarIndicadores() {
+
+    slides.forEach((slide, indice) => {
+
+      const dot =
+        document.createElement("button");
+
+      dot.classList.add("dot");
+
+      dot.setAttribute(
+        "aria-label",
+        `Foto ${indice + 1}`
+      );
+
+      dot.addEventListener("click", () => {
+
+        irParaSlide(indice);
+
+      });
+
+      dotsContainer.appendChild(dot);
+
+    });
+
+    dots =
       document.querySelectorAll(".dot");
 
-
-    let slideAtual = 0;
-
-
-    let carrosselAutomatico;
+  }
 
 
-    /* =====================================================
-       MOSTRAR SLIDE
-    ===================================================== */
+  /* =====================================================
+     MOSTRAR SLIDE
+  ===================================================== */
 
-    function mostrarSlide(indice) {
+  function mostrarSlide(indice) {
 
-      slides.forEach((slide) => {
+    slides.forEach((slide) => {
 
-        slide.classList.remove("active");
+      slide.classList.remove("active");
 
-      });
+    });
 
+    dots.forEach((dot) => {
 
-      dots.forEach((dot) => {
+      dot.classList.remove("active");
 
-        dot.classList.remove("active");
-
-      });
-
-
-      if (indice >= slides.length) {
-
-        slideAtual = 0;
-
-      }
+    });
 
 
-      else if (indice < 0) {
+    if (indice >= slides.length) {
 
-        slideAtual = slides.length - 1;
+      slideAtual = 0;
 
-      }
+    }
 
+    else if (indice < 0) {
 
-      else {
+      slideAtual =
+        slides.length - 1;
 
-        slideAtual = indice;
+    }
 
-      }
+    else {
 
-
-      slides[slideAtual]
-        .classList
-        .add("active");
-
-
-      dots[slideAtual]
-        .classList
-        .add("active");
+      slideAtual = indice;
 
     }
 
 
-    /* =====================================================
-       MUDAR SLIDE
-    ===================================================== */
-
-    function mudarSlide(direcao) {
-
-      mostrarSlide(
-        slideAtual + direcao
-      );
+    slides[slideAtual]
+      .classList
+      .add("active");
 
 
-      reiniciarCarrossel();
+    dots[slideAtual]
+      .classList
+      .add("active");
 
-    }
-
-
-    /* =====================================================
-       IR PARA SLIDE
-    ===================================================== */
-
-    function irParaSlide(indice) {
-
-      mostrarSlide(indice);
+  }
 
 
-      reiniciarCarrossel();
+  /* =====================================================
+     MUDAR SLIDE
+  ===================================================== */
 
-    }
+  function mudarSlide(direcao) {
 
+    mostrarSlide(
+      slideAtual + direcao
+    );
 
-    /* =====================================================
-       CARROSSEL AUTOMÁTICO
-    ===================================================== */
+    reiniciarCarrossel();
 
-    function iniciarCarrossel() {
-
-      carrosselAutomatico =
-        setInterval(() => {
-
-          mostrarSlide(
-            slideAtual + 1
-          );
-
-        }, 5000);
-
-    }
+  }
 
 
-    /* =====================================================
-       REINICIAR CARROSSEL
-    ===================================================== */
+  /* =====================================================
+     IR PARA SLIDE
+  ===================================================== */
 
-    function reiniciarCarrossel() {
+  function irParaSlide(indice) {
 
-      clearInterval(
-        carrosselAutomatico
-      );
+    mostrarSlide(indice);
 
+    reiniciarCarrossel();
 
-      iniciarCarrossel();
-
-    }
+  }
 
 
-    /* =====================================================
-       INICIAR
-    ===================================================== */
+  /* =====================================================
+     CARROSSEL AUTOMÁTICO
+  ===================================================== */
 
-    mostrarSlide(0);
+  function iniciarCarrossel() {
 
+    carrosselAutomatico =
+      setInterval(() => {
+
+        mostrarSlide(
+          slideAtual + 1
+        );
+
+      }, 5000);
+
+  }
+
+
+  /* =====================================================
+     REINICIAR CARROSSEL
+  ===================================================== */
+
+  function reiniciarCarrossel() {
+
+    clearInterval(
+      carrosselAutomatico
+    );
 
     iniciarCarrossel();
 
-  </script>
+  }
+
+
+  /* =====================================================
+     INICIAR
+  ===================================================== */
+
+  criarIndicadores();
+
+  mostrarSlide(0);
+
+  iniciarCarrossel();
+
+</script>
 
 
 </body>
