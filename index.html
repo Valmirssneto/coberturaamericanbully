@@ -531,18 +531,21 @@ footer a:hover {
        RESPONSIVO
     ===================================================== */
 
-    @media (max-width: 900px) {
-.parents {
-  gap: 30px;
-}
+   @media (max-width: 900px) {
 
-.parent-card {
-  width: 100%;
-  max-width: 300px;
-}
+  .parents {
+    gap: 30px;
+  }
 
-.parent-photo {
-  height: 320px;
+  .parent-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .parent-photo {
+    height: 260px;
+  }
+
 }
 
 .parents-title span {
@@ -692,11 +695,15 @@ footer a:hover {
   width: 100%;
   height: 280px;
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
   border:2px solid #c9a45c;
  transition: transform .4s ease;
 }
-
+   
+.mother-photo {
+  object-fit: contain;
+  background: #111111;
+}
    .parent-card {
   overflow: hidden;
 }
@@ -1031,13 +1038,12 @@ Liu Haze
           PAI
         </div>
 
-        <img
-          class="parent-photo"
-          src="pailiu.jpeg"
-          alt="Pai do Liu Haze"
-        >
-
-        <h4>
+     <img
+  class="parent-photo mother-photo"
+  src="maeliu.png"
+  alt="Mãe do Liu Haze"
+>
+               <h4>
           Ice Blue
         </h4>
 
