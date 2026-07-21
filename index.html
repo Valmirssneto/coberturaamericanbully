@@ -527,114 +527,7 @@ footer a:hover {
   opacity: 0.8;
 }
 
-    /* =====================================================
-       RESPONSIVO
-    ===================================================== */
-
-   @media (max-width: 900px) {
-
-  .parents {
-    gap: 30px;
-  }
-
-  .parent-card {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .parent-photo {
-    height: 260px;
-  }
-
-}
-
-.parents-title span {
-  width: 35px;
-}
-
-.parents-title h3 {
-  font-size: 17px;
-  letter-spacing: 2px;
-}
-     
-      header {
-        padding: 20px;
-
-        flex-direction: column;
-
-        gap: 15px;
-      }
-
-      nav {
-        text-align: center;
-      }
-
-      nav a {
-        display: inline-block;
-
-        margin: 5px 8px;
-      }
-
-      .hero {
-        padding: 180px 25px 80px;
-
-        align-items: flex-end;
-      }
-
-      .hero-overlay {
-        background:
-          linear-gradient(
-            to top,
-            rgba(0, 0, 0, 0.98) 0%,
-            rgba(0, 0, 0, 0.70) 60%,
-            rgba(0, 0, 0, 0.25) 100%
-          );
-      }
-
-      h1 {
-        font-size: 44px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .features {
-        grid-template-columns: 1fr;
-      }
-
-      .feature {
-        border-left: none;
-
-        border-bottom: 1px solid #9f7f42;
-      }
-
-      .phone {
-        font-size: 34px;
-      }
-
-      .carousel-arrow {
-        width: 40px;
-
-        height: 40px;
-
-        font-size: 22px;
-      }
-
-      .arrow-left {
-        left: 10px;
-      }
-
-      .arrow-right {
-        right: 10px;
-      }
-
-      section {
-        padding: 50px 20px;
-      }
-
-    }
-/* =====================================================
+  /* =====================================================
    PAIS DO LIU - LINHAGEM
 ===================================================== */
 
@@ -701,8 +594,10 @@ footer a:hover {
 }
    
 .mother-photo {
-  object-fit: contain;
-  background: #111111;
+    object-fit: contain;
+    object-position: center;
+    background: #111;
+    padding: 8px;
 }
    .parent-card {
   overflow: hidden;
@@ -742,6 +637,82 @@ footer a:hover {
   font-size: 14px;
   letter-spacing: 1px;
 }
+
+   /* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 900px) {
+
+  header {
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav {
+    text-align: center;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 5px 8px;
+  }
+
+  .hero {
+    padding: 180px 25px 80px;
+    align-items: flex-end;
+  }
+
+  h1 {
+    font-size: 44px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    border-left: none;
+    border-bottom: 1px solid #9f7f42;
+  }
+
+  .phone {
+    font-size: 34px;
+  }
+
+  section {
+    padding: 50px 20px;
+  }
+
+  .parents {
+    gap: 30px;
+  }
+
+  .parent-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .parent-photo {
+    height: 260px;
+  }
+
+  .parents-title span {
+    width: 35px;
+  }
+
+  .parents-title h3 {
+    font-size: 17px;
+    letter-spacing: 2px;
+  }
+
+}
+   
   </style>
 
 </head>
@@ -1038,10 +1009,10 @@ Liu Haze
           PAI
         </div>
 
-     <img
-  class="parent-photo mother-photo"
-  src="maeliu.png"
-  alt="Mãe do Liu Haze"
+ <img
+  class="parent-photo"
+  src="pailiu.jpeg"
+  alt="Pai do Liu Haze"
 >
                <h4>
           Ice Blue
@@ -1063,38 +1034,34 @@ Liu Haze
       </div>
 
 
-      <!-- MÃE -->
+    <!-- MÃE -->
 
-      <div class="parent-card">
+<div class="parent-card">
 
-        <div class="parent-label">
-          MÃE
-        </div>
+  <div class="parent-label">
+    MÃE
+  </div>
 
-        <img
-          class="parent-photo"
-          src="maeliu.png"
-          alt="Mãe do Liu Haze"
-        >
+  <img
+    class="parent-photo mother-photo"
+    src="maeliu.png"
+    alt="Mãe do Liu Haze"
+  >
 
-        <h4>
-          NOME DA MÃE
-        </h4>
+  <h4>NOME DA MÃE</h4>
 
-        <div class="registry">
+  <div class="registry">
 
-          <img
-            src="maeliu2.png"
-            alt="Pedigree IDR"
-          >
+    <img
+      src="maeliu2.png"
+      alt="Pedigree IDR"
+    >
 
-          <span>
-            Pedigree IDR
-          </span>
+    <span>Pedigree IDR</span>
 
-        </div>
+  </div>
 
-      </div>
+</div>
 
     </div>
 
