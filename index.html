@@ -398,7 +398,7 @@
     ===================================================== */
 
     .box {
-      border: 1px solid #9f7f42;
+      border:2px solid #c9a45c;
 
       padding: 40px;
 
@@ -474,7 +474,7 @@
     .contact {
       text-align: center;
 
-      border: 1px solid #9f7f42;
+      border:2px solid #c9a45c;
 
       padding: 35px;
 
@@ -666,7 +666,7 @@ footer a:hover {
 }
 
 .parent-card {
-  width: 300px;
+  width: 340px;
   text-align: center;
   padding: 22px;
   border: 1px solid rgba(201, 164, 92, 0.55);
@@ -688,14 +688,23 @@ footer a:hover {
 }
 
 .parent-photo {
-  display: block;
+   display: block;
   width: 100%;
   height: 300px;
   object-fit: cover;
   object-position: center;
-  border: 1px solid #9f7f42;
+  border:2px solid #c9a45c;
+ transition: transform .4s ease;
 }
 
+   .parent-card {
+  overflow: hidden;
+}
+
+.parent-card:hover .parent-photo {
+  transform: scale(1.05);
+}
+   
 .parent-card h4 {
   color: #ffffff;
   font-family: Georgia, serif;
@@ -1008,7 +1017,7 @@ Liu Haze
 
     <div class="parents-title">
       <span></span>
-      <h3>PAIS DO LIU HAZE</h3>
+      <h3>ORIGEM GENÉTICA</h3>
       <span></span>
     </div>
 
